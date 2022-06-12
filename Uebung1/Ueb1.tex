@@ -1,0 +1,129 @@
+\documentclass[11pt,titlepage]{article}
+
+%Laenderspezifische Einstellungen bzgl. Rechtschreibung, Sonderzeichen und Kodierung
+\usepackage[utf8]{inputenc}
+\usepackage[naustrian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{graphicx}
+%\usepackage{subcaption}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{courier}
+\usepackage{matlab-prettifier}
+\definecolor{light-gray}{gray}{0.85}
+\lstset{
+language=C++,
+numbers=left,
+style=Matlab-editor,
+basicstyle=\mlttfamily,
+breaklines=true,
+backgroundcolor=\color{light-gray},
+tabsize=2,
+basicstyle=\footnotesize\ttfamily,
+frame=single,
+inputencoding=utf8,
+extendedchars=true,
+showstringspaces=false,
+literate =
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+	{ü}{{\"u}}1
+	{Ä}{{\"A}}1
+	{Ö}{{\"O}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ₙ}{{$_n$}}1
+}
+
+\def\ContinueLineNumber{\lstset{firstnumber=last}}
+\def\StartLineAt#1{\lstset{firstnumber=#1}}
+
+\usepackage[
+	a4paper,
+	top = 2cm,
+	bottom = 2 cm,
+	left = 2cm,
+	right = 2cm,
+	headheight = 15pt,
+	includeheadfoot
+	]{geometry}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[english]{varioref}
+\usepackage{hyperref}
+
+\fancypagestyle{fancy}{
+	\fancyhead[R]{Page \thepage}
+	\fancyhead[L]{\leftmark}
+	\renewcommand{\headrulewidth}{1.25pt}
+
+	\fancyfoot[L]{\tiny{Alg. Meth. i.d. Num. - Uebung1 , created: \today}}
+	\fancyfoot[R]{\tiny{Felix Dreßler (k12105003), Elisabeth Köberle (k12110408), Eva Zahn (k12110309)}}
+	\cfoot{}
+	\renewcommand{\footrulewidth}{1.25pt}
+}
+
+\setlength{\headsep}{10mm}
+\setlength{\footskip}{10mm}
+
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{1.1ex plus0.25ex minus0.25ex}
+\setlength{\tabcolsep}{0.2cm} % for the horizontal padding
+
+\pagestyle{fancy}
+
+\title{Algorithmische Methoden in der Numerik - Uebung1}
+\author{Felix Dreßler (k12105003) \\ Elisabeth Köberle (k12110408) \\ Eva Zahn (k12110309)}
+\date{\today} %Erstellungsdatum
+
+\begin{document}
+\maketitle
+
+\section{Funktion - estimateAbsError}
+
+Im folgenden steht die MatLab Funktion zur experimentellen Fehlerabschätzung einer beliebigen Funktion f und einem gegebenen Punkt x0 mit Schrittweite h.
+
+Die Funktion erstellt Matrizen mit den jeweiligen Größen \emph{pxp}, eine mögliche Optimierung dieser Vorgehensweise wäre die Speicherung der Werte in nur einen Vektor der Größe \emph{p}.   
+
+	\lstinputlisting[]{estimateAbsError.m}
+		
+\section{Tests}
+	\subsection{Testfunktionen}
+		Obiges Programm wurde mit folgenden Funktionen getestet:
+		\lstinputlisting[]{f1.m}
+		\lstinputlisting[]{f2.m}
+	\subsection{Ergebnisse}
+		Untenstehend ist der output des Programs mit den angegebenen Funktionen an den Stellen \\
+		\emph{x0} = 0,1 \\
+		\emph{x0} = 10\textsuperscript{-3} \\
+		\emph{x0} = -1,0000001 \\
+		\emph{x0} = 1,0000001
+		
+		\begin{lstlisting}
+			>> x0s = [0.1, 1e-3, -1.0000001, 1.0000001]
+			
+			x0s =
+			
+			1.000000000000000e-01     1.000000000000000e-03    
+			-1.000000100000000e+00     1.000000100000000e+00
+			
+			>> arrayfun(@(x0) estimateAbsError(@f1,x0),x0s)
+			
+			ans =
+			
+			1.326970321773750e-16     9.930136612989092e-17     
+			5.307881287095000e-17     4.784171007815724e-11
+			
+			>> arrayfun(@(x0) estimateAbsError(@f2,x0),x0s)
+			
+			ans =
+			
+			1.592364386128500e-16     9.930136612989092e-17     
+			7.829083830833991e-18     1.061576257419000e-16
+		\end{lstlisting}
+
+
+\end{document}
