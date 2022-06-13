@@ -14,15 +14,13 @@ nq = n;
 for j = n:-1:1 
     si(j) = dot(A(:,j),A(:,j));
     if si(j) == 0
-        temp1 = pi(j); %oder [pi(j),pi(nq)] = deal(pi(nb),pi(j));
+        temp1 = pi(j); %alternative (maybe less efficient) [pi(j),pi(nq)] = deal(pi(nb),pi(j));
         pi(j) = pi(nq);
         pi(nq) = temp1;
         nq = nq-1;
     end
 end
 siq = si;
-
-%drüber is ok
 
 for i = 1:nq%different loop iterator than in script, here i is k
 
