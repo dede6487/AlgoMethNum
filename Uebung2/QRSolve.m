@@ -13,7 +13,7 @@ else
     Qt = transpose(Q);
     Rt = transpose(R);
     
-    c= Qt * b;
+    c= Qt * b';
 
     x = Rt * c;
 end
