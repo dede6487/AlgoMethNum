@@ -43,7 +43,7 @@ for i = 1:nq%different loop iterator than in script, here i is k
     end
     
     if sign(A(i,(pi(i)))) == 0 %to compensate for the different sign function
-        D(i,1) = sqrt(si(pi(i)));
+        D(i,1) = -sqrt(si(pi(i)));
     else
         D(i,1) = -sign(A(i,(pi(i)))) * sqrt(si(pi(i)));
     end
