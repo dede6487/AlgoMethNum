@@ -26,6 +26,8 @@ for i = 1:nq%different loop iterator than in script, here i is k
 
     [val,piv] = max(si(pi(i:nq))./siq(pi(i:nq)));
     
+    piv = piv+i-1;
+
     if val <= -1
         k =i-1;
         return;
@@ -35,7 +37,7 @@ for i = 1:nq%different loop iterator than in script, here i is k
     pi(i) = pi(piv);
     pi(piv) = temp1;
 
-    si(pi(i)) = dot(A(:,pi(i)),A(:,pi(i)));
+    si(pi(i)) = dot(A(i:m,pi(i)),A(i:m,pi(i)));
 
     if si(pi(i)) < m * eps^2 * siq(pi(i))
         k = i-1;
