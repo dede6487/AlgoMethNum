@@ -2,13 +2,9 @@ function [A, D, pi , k ] = QRFact (A)
     
 [m,n] = size(A);
 
-
 pi = 1:n; %p=pi
 si = zeros(n,1);
-%siq = zeros(n,1);
-
 D = zeros(min(m,n),1);
-
 nq = n;
 
 for j = n:-1:1 
@@ -62,4 +58,5 @@ for i = 1:nq%different loop iterator than in script, here i is k
     end
 end
 k = nq;
+%return;
 end

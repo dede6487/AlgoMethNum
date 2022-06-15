@@ -6,16 +6,16 @@ function [ x ] = QRSolve (B,D, p , k , b )
 if k < n
     x = zeros(n:1);
 else
-    c = b ;
-    for j =1: k
-        v= zeros (m ,1) ;
-        if(j >1)
-        v (1: j -1) =0;
-        end
-        v(j :m)=B (j:m ,p(j) );
+    %c = b ;
+    %for j =1: k
+    %    v= zeros (m ,1) ;
+    %    if(j >1)
+    %    v (1: j -1) =0;
+    %    end
+    %    v(j :m)=B (j:m ,p(j) );
 
-        c= eye (m ) -(2/ dot(v ,v)) * dot(v,v)* c;
-    end
+    %    c= eye (m ) -(2/ dot(v ,v)) * dot(v,v)* c;
+    %end
 
     Q = CompQ(B,p,k);
     Qt = transpose(Q);
