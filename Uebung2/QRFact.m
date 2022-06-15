@@ -28,7 +28,7 @@ for i = 1:nq%different loop iterator than in script, here i is k
     
     piv = piv+i-1;
 
-    if val <= -1
+    if val <= -1 %piv < k wenn val <= -1
         k =i-1;
         return;
     end
@@ -57,7 +57,7 @@ for i = 1:nq%different loop iterator than in script, here i is k
         A(i:m, pi(j)) = A(i:m, pi(j)) - gamma * A(i:m, pi(i));
         si(pi(j)) = si(pi(j)) - A(i, pi(j))^2;
         if si(pi(j)) < m * eps * siq(pi(j))
-            si(pi(j)) = dot(A(l,pi(j)),A(l,pi(j)));
+            si(pi(j)) = dot(A(i+1:m,pi(j)),A(i+1:m,pi(j)));
         end
     end
 end

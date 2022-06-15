@@ -17,11 +17,11 @@ else
         c= eye (m ) -(2/ dot(v ,v)) * dot(v,v)* c;
     end
 
-    %Q = CompQ(B,p,k);
-    %Qt = transpose(Q);
-    %c= Qt * b';
+    Q = CompQ(B,p,k);
+    Qt = transpose(Q);
+    c= Qt * b';
 
-    %R = CompR(B,D,p,k);    
+    R = CompR(B,D,p,k);    
     %Rt = transpose(R);
     %x = Rt * c;
     R=B (: , p) ;

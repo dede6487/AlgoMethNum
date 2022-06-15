@@ -9,7 +9,7 @@ for j =1: k
     if(j >1)
         v (1: j -1) =0;
     end
-    v(j :m)=B (j:m ,p(j) );
+    v(j:m)=B (j:m ,p(j) );
 
     P= eye (m) -(2/ dot (v ,v)) *( v* transpose (v ));
     Q=Q *P;
