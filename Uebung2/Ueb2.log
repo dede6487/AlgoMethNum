@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  14 JUN 2022 08:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.4.4)  16 JUN 2022 21:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -542,36 +542,44 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.57         if 
-                si(pi(j)) < m * eps * siq(pi(j)) [1]) [2] (./QRSolve.m)
-[3] (./CompR.m) (./CompQ.m) [4] [5] (./Ueb2.aux)
+l.57         end
+                 [1]) [2] (./QRSolve.m) [3] (./CompR.m) (./CompQ.m) [4]
+[5] [6] [7] [8] [9] [10] [11]
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 4
+82.
+
+(d:/Anwendungen/texlive/2021/texmf-dist/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+) [12]
+[13] [14] [15] (./Ueb2.aux)
 Package rerunfilecheck Info: File `Ueb2.out' has not changed.
-(rerunfilecheck)             Checksum: B18F8E73E7E0834410145B81088B44E7;612.
+(rerunfilecheck)             Checksum: A6EDB36F56FECABB5C4F5554CC06CD9E;2442.
  ) 
 Here is how much of TeX's memory you used:
- 13541 strings out of 478994
- 191580 string characters out of 5856172
- 996912 words of memory out of 5000000
- 30688 multiletter control sequences out of 15000+600000
- 415836 words of font info for 57 fonts, out of 8000000 for 9000
+ 14269 strings out of 478994
+ 201895 string characters out of 5856172
+ 1048912 words of memory out of 5000000
+ 30863 multiletter control sequences out of 15000+600000
+ 416912 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,12n,74p,230b,1948s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,12n,74p,238b,1948s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.
 enc}{d:/Anwendungen/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/Anw
-endungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><d:/A
-nwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><d:
-/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><
-d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb
-><d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.p
-fb><d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200
-.pfb><d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm17
-28.pfb><d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti
-1095.pfb><d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a
-.pfb>
-Output written on Ueb2.pdf (6 pages, 163539 bytes).
+endungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb><d:/A
+nwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><d:
+/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><
+d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb
+><d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.p
+fb><d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095
+.pfb><d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm12
+00.pfb><d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm
+1728.pfb><d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sf
+ti1095.pfb><d:/Anwendungen/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr
+8a.pfb>
+Output written on Ueb2.pdf (16 pages, 245368 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 212 compressed objects within 3 object streams
- 122 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 979 PDF objects out of 1000 (max. 8388607)
+ 941 compressed objects within 10 object streams
+ 670 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -8,7 +8,7 @@ else
 
     Q = CompQ(B,p,k);
     Qt = transpose(Q);
-    c= Qt * b';
+    c= Qt * b;
 
     R=B (:,p) ;
     x= zeros (n,1) ;
