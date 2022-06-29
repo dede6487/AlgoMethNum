@@ -16,15 +16,17 @@ if nargin < 5
 end
 
 x = x0;
-k = 1;
-rk = b-A*x0;
+k = 0;
+r0 = b-A*x0;
 
-nr0 = norm(rk)*myeps;
+nr0 = norm(r0)*myeps;
+
+rk = r0;
 
 W = diag(A);
 
-while nr0 >= norm(rk) || k < itmax
-    pk = W ./ rk;
+while nr0 <= norm(rk) && k < itmax
+    pk = W .\ rk;
     x = x + pk;
     rk = b-A*x;
     
