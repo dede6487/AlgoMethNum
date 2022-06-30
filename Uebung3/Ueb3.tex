@@ -1,0 +1,206 @@
+\documentclass[11pt,titlepage]{article}
+
+%Laenderspezifische Einstellungen bzgl. Rechtschreibung, Sonderzeichen und Kodierung
+\usepackage[utf8]{inputenc}
+\usepackage[naustrian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{graphicx}
+%\usepackage{subcaption}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{courier}
+\usepackage{matlab-prettifier}
+\definecolor{light-gray}{gray}{0.85}
+\lstset{
+language=C++,
+numbers=left,
+style=Matlab-editor,
+basicstyle=\mlttfamily,
+breaklines=true,
+backgroundcolor=\color{light-gray},
+tabsize=2,
+basicstyle=\footnotesize\ttfamily,
+frame=single,
+inputencoding=utf8,
+extendedchars=true,
+showstringspaces=false,
+literate =
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+	{ü}{{\"u}}1
+	{Ä}{{\"A}}1
+	{Ö}{{\"O}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ₙ}{{$_n$}}1
+}
+
+\def\ContinueLineNumber{\lstset{firstnumber=last}}
+\def\StartLineAt#1{\lstset{firstnumber=#1}}
+
+\usepackage[
+	a4paper,
+	top = 2cm,
+	bottom = 2 cm,
+	left = 2cm,
+	right = 2cm,
+	headheight = 15pt,
+	includeheadfoot
+	]{geometry}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[english]{varioref}
+\usepackage{hyperref}
+
+\fancypagestyle{fancy}{
+	\fancyhead[R]{Page \thepage}
+	\fancyhead[L]{\leftmark}
+	\renewcommand{\headrulewidth}{1.25pt}
+
+	\fancyfoot[L]{\tiny{Alg. Meth. i.d. Num. - Uebung3 , created: \today}}
+	\fancyfoot[R]{\tiny{Felix Dreßler (k12105003), Elisabeth Köberle (k12110408)}}
+	\cfoot{}
+	\renewcommand{\footrulewidth}{1.25pt}
+}
+
+\setlength{\headsep}{10mm}
+\setlength{\footskip}{10mm}
+
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{1.1ex plus0.25ex minus0.25ex}
+\setlength{\tabcolsep}{0.2cm} % for the horizontal padding
+
+\pagestyle{fancy}
+
+\title{Algorithmische Methoden in der Numerik - Uebung3}
+\author{Felix Dreßler (k12105003) \\ Elisabeth Köberle (k12110408)}
+\date{\today} %Erstellungsdatum
+
+\begin{document}
+\maketitle
+
+	\section{Aufgabe 4}
+		\subsection{Teilaufgabe a}
+			\lstinputlisting[]{Aufgabe4/Stiff1.m}
+			\lstinputlisting[]{Aufgabe4/Stiff2.m}
+			
+		\subsection{Teilaufgabe b}
+			\lstinputlisting[]{Aufgabe4/RHS.m}
+		
+		\subsection{Teilaufgabe c}
+			Zur Lösung des GLS haben wir zuerst zwei funktionen \emph{f.m} und eine Funktion \emph{ub.m} zur einfacheren Eingabe erstellt.
+			
+			\lstinputlisting[]{Aufgabe4/f.m}
+			\lstinputlisting[]{Aufgabe4/ub.m}
+				
+			Im Folgenden nun die Lösungen des GLS: (für die exakte Werte wurden die MatLab workspaces in der Abgabe inkludiert)
+			Zur besseren Übersicht wurde ein kurzes Skript zur Fehlerberechnung erstellt.
+			
+			\lstinputlisting[]{Aufgabe4/Test.m}
+			
+			Die Outputs waren wie folgt:
+			
+			\begin{lstlisting}
+				N
+				10
+				
+				direkte Berechnung :
+				Elapsed time is 0.000320 seconds.
+				Fehler direkte Lsg ( Maximumsnorm ):
+				
+				ans =
+				
+				9.6323
+				
+				iterative Berechnung 
+				pcg converged at iteration 12 to a solution with relative residual 9.4e-07.
+				Elapsed time is 0.022338 seconds.
+				Fehler iterative Lsg mit ( Maximumsnorm ):
+				
+				ans =
+				
+				9.6323
+				
+				N
+				100
+				
+				direkte Berechnung :
+				Elapsed time is 0.019078 seconds.
+				Fehler direkte Lsg ( Maximumsnorm ):
+				
+				ans =
+				
+				0.0186
+				
+				iterative Berechnung 
+				pcg stopped at iteration 20 without converging to the desired tolerance 1e-06
+				because the maximum number of iterations was reached.
+				The iterate returned (number 1) has relative residual 0.00052.
+				Elapsed time is 0.013484 seconds.
+				Fehler iterative Lsg mit ( Maximumsnorm ):
+				
+				ans =
+				
+				0.0535
+				
+				N
+				1000
+				
+				direkte Berechnung :
+				Elapsed time is 2.263114 seconds.
+				Fehler direkte Lsg ( Maximumsnorm ):
+				
+				ans =
+				
+				1.8426e-04
+				
+				iterative Berechnung 
+				pcg stopped at iteration 20 without converging to the desired tolerance 1e-06
+				because the maximum number of iterations was reached.
+				The iterate returned (number 10) has relative residual 0.0016.
+				Elapsed time is 0.375518 seconds.
+				Fehler iterative Lsg mit ( Maximumsnorm ):
+				
+				ans =
+				
+				0.0368
+			\end{lstlisting}
+			
+			
+\newpage			
+	\section{Aufgabe 5}
+	
+		\lstinputlisting[]{Aufgabe5/Jacobi.m}
+		
+		\subsection{Testberechnung}
+			Zur Durchführung dieser Tests wurde wieder ein kurzes Skript erstellt.:
+			
+			\lstinputlisting[]{Aufgabe5/Test5.m}
+
+			das die folgenden Outputs lieferte:
+			
+			\begin{lstlisting}
+				N:
+				10
+				
+				Elapsed time is 0.161501 seconds.
+				pcg converged at iteration 12 to a solution with relative residual 9.4e-07.
+				
+				ans =
+				
+				9.6323
+				
+				
+				ans =
+				
+				1.3104e-05
+				
+				
+			\end{lstlisting}
+			
+			Ab N = 100 dauerte die Berechnung länger als 2 Minuten, deshalb wurde an diesem Punkt abgebrochen.
+			
+\end{document}

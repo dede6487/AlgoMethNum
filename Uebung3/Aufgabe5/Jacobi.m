@@ -3,16 +3,20 @@
 function [x,exitflag] = Jacobi(A,b,x0,itmax,myeps)
 
 exitflag = 0;
-[n,~] = size(A);
+[n,m] = size(A);
 
 if nargin < 5
     myeps = 1.e-8;
-    if nargin < 4
-        itmax = n*n;
-        if nargin < 3
-            x0 = zeros(n);
-        end
-    end
+end
+if nargin < 4
+    itmax = n*n;
+end
+if nargin < 3
+    x0 = zeros(n);
+end
+
+if n ~= m
+    return;
 end
 
 x = x0;
@@ -24,6 +28,10 @@ nr0 = norm(r0)*myeps;
 rk = r0;
 
 W = diag(A);
+
+if W(1:n) == 0
+    return;
+end
 
 while nr0 <= norm(rk) && k < itmax
     pk = W .\ rk;
